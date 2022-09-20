@@ -1,7 +1,7 @@
 randomText();
 async function randomText() {
     $.ajax({
-        url: `http://127.0.0.1:5000/randomtext`,
+        url: `https://word-english.herokuapp.com/randomtext`,
         type: "GET",
         contentType: "application/json",
         success: function( data ) { 
@@ -85,7 +85,7 @@ function control() {
 // const axios=require('axios')
 async function myfunc(event) {
     $.ajax({
-        url: `http://127.0.0.1:5000/${event.target.innerHTML.replace("&nbsp;&nbsp;","")}`,
+        url: `https://word-english.herokuapp.com/${event.target.innerHTML.replace("&nbsp;&nbsp;","")}`,
         type: "POST",
         contentType: "application/json",
         data: JSON.stringify({'inputVar': 1}),
