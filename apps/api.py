@@ -5,7 +5,6 @@ from requests import get
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP], server=server)
 cors = CORS(app, resources={r"/foo": {"origins": "*"}})
 app.config['CORS_HEADERS'] = 'Content-Type'
 
