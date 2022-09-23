@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RABBIT WORD</title>
+    <link rel="shortcut icon" href="#" />
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
 
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body class="bg-dark p-2" style="overflow-x:hidden">
-
+<body class="bg-dark p-2" style="overflow-x: hidden">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 text-center">
             <div class="card opacity-75">
@@ -28,127 +26,36 @@
                         Software Engineer Ümit KOÇ
                     </div>
                 </small>
-                <img src="https://img.freepik.com/free-vector/white-rabbit-cartoon-white-background_1308-66612.jpg?w=2000"
-                    alt="" class="thumbnail card-img-center w-50">
-
+                <img src="{{url_for('static',filename='rabbit.jpg')}}" alt="image" class="thumbnail card-img-center w-50" />
             </div>
         </div>
     </div>
 
     <div class="row d-flex justify-content-center my-2">
         <div class="col-md-6 text-center">
-            <div class="card " style="height: 100wh;">
-                <div class="card-body">
-                    <span id="body" onclick="myfunc(event)"></span>
-                    <div class="spinner-grow text-success" role="status" id="loading"></div>
-                </div>
+            <div class="card" style="height: 100wh">
+                <div class="card-body" id="body" onclick="myfunc(event)"></div>
                 <div class="card-footer">
                     <a href="#" onclick="randomText()" class="btn btn-info btn-lg">Random Paragraph</a>
                 </div>
-
             </div>
         </div>
     </div>
 
+    <div id="kt_docs_toast_stack_container" class="toast-container position-fixed top-0 end-0 ">
+        <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-kt-docs-toast="stack">
+            <div class="toast-header d-flex justify-content-between">
+                <small>RABBIT WORD</small>
+                <span></span>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="lock">
+            </div>
+        </div>
+    </div>
+    <!--end::Toast-->
 
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <script>
-        let p = document.createElement("p")
-        async function randomText() {
-            const loading = document.getElementById("loading")
-            p.innerHTML = ""
-            loading.setAttribute("style", "")
-            $.ajax({
-                url: `https://word-english.herokuapp.com/randomtext`,
-                type: "GET",
-                contentType: "application/json",
-                success: function (data) {
-                    data.split(" ").forEach(i => {
-                        let button = document.createElement("button")
-                        button.className = "btn btn-square-md btn-light p-0 opacity-50"
-                        button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;")
-                        button.innerHTML = i + "&nbsp;&nbsp;"
-                        p.appendChild(button)
-                    });
-                }
-            })
-
-            loading.setAttribute("style", "display:none")
-
-        }
-        let header = document.createElement("p")
-        "Hello World".split(" ").forEach(i => {
-            let button = document.createElement("button")
-            button.className = "btn btn-square-md btn-light p-0 opacity-50 fs-1 fw-bold"
-            button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;")
-            button.innerHTML = i + "&nbsp;&nbsp;"
-            header.appendChild(button)
-        });
-        let image = document.createElement("img")
-        image.setAttribute("src", "https://img.freepik.com/free-vector/white-rabbit-cartoon-white-background_1308-66612.jpg?w=2000")
-        let holder = document.createElement("h1")
-        let toastLiveExample = document.getElementById('liveToast')
-        let toast_demo = document.createElement("div")
-        let live_toast = document.createElement("div")
-        let toast_header = document.createElement("div")
-        let toast_body = document.createElement("div")
-        let strong = document.createElement("strong")
-        let button = document.createElement("button")
-        let section = document.createElement("div")
-        let step = 0
-
-        p.appendChild(header)
-        ///////////////////////////////////////////
-        strong.innerHTML = "RABBIT WORD"
-        live_toast.id = "liveToast"
-        toast_body.id = "test"
-        live_toast.className = "toast"
-        toast_header.className = "toast-header d-flex justify-content-between"
-        toast_body.className = "toast-body text-center"
-        strong.className = "text-center"
-        image.className = "card-img-top w-25"
-        button.className = "btn-close"
-        section.className = " d-flex justify-content-between"
-        toast_demo.className = "toast-container position-fixed bottom-0 end-0 p-3"
-        holder.className = "opacity-25 text-light"
-        live_toast.setAttribute("role", "alert")
-        live_toast.setAttribute("aria-live", "assertive")
-        live_toast.setAttribute("aria-atomic", "true")
-        button.setAttribute("data-bs-dismiss", "toast")
-        button.setAttribute("aria-label", "Close")
-        holder.setAttribute("style", " display: grid; justify-content: center; align-content: center;")
-        holder.setAttribute("id", "holder")
-        ///////////////////////////////////////////
-        toast_header.appendChild(image)
-        section.appendChild(image)
-        section.appendChild(strong)
-        toast_header.appendChild(section)
-        toast_header.appendChild(button)
-        live_toast.appendChild(toast_header)
-        live_toast.appendChild(toast_body)
-        toast_demo.appendChild(live_toast)
-        document.getElementById("body").appendChild(holder)
-        document.getElementById("body").appendChild(p)
-        document.getElementById("body").append(toast_demo)
-        async function myfunc(event) {
-            const word = event.target.innerHTML.replace("&nbsp;&nbsp;", "")
-            $.ajax({
-                url: `https://word-english.herokuapp.com/${word}`,
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify({ 'inputVar': 1 }),
-                success: function (data) {
-                    document.getElementById("test").innerHTML = `<h3>${data}</h3> ${word}`
-                    const toast = new bootstrap.Toast(document.getElementById("liveToast"))
-                    toast.show()
-                }
-            });
-
-        }
-
-    </script>
+    <script src="{{url_for('static',filename='main.js')}}"></script>
 </body>
 
 </html>

@@ -25,3 +25,8 @@ def text():
     response = get("https://randomword.com/paragraph")
     text = BeautifulSoup(response.text, 'html.parser')
     return text.select(selector='#random_word_definition')[0].text
+
+
+
+if __name__ == "__main__":
+        app.run()
