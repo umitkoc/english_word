@@ -16,8 +16,8 @@ def index(text):
 
 @app.route('/')
 def home():
-    return render_template('index.html')
-
+    #return render_template('index.html')
+    return ""
 
 @app.route('/randomtext')
 #@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
