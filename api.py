@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-import translators as ts
+#import translators as ts
 #from flask_cors import CORS, cross_origin
 from requests import get
 from bs4 import BeautifulSoup
@@ -11,8 +11,8 @@ app = Flask(__name__)
 @app.route('/<text>', methods=["POST"])
 #@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def index(text):
-    return ts.google(from_language="en", to_language="tr", query_text=text)
-
+    #return ts.google(from_language="en", to_language="tr", query_text=text)
+    return ""
 
 @app.route('/')
 def home():
