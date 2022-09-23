@@ -19,12 +19,12 @@ def home():
     #return render_template('index.html')
     return ""
 
-@app.route('/randomtext')
+#@app.route('/randomtext')
 #@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
-def text():
-    response = get("https://randomword.com/paragraph")
-    text = BeautifulSoup(response.text, 'html.parser')
-    return text.select(selector='#random_word_definition')[0].text
+#def text():
+ #   response = get("https://randomword.com/paragraph")
+  #  text = BeautifulSoup(response.text, 'html.parser')
+   # return text.select(selector='#random_word_definition')[0].text
 
 
 
