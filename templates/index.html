@@ -2,23 +2,21 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RABBIT WORD</title>
-    <link rel="shortcut icon" href="#">
+    <link rel="shortcut icon" href="#" />
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-
 </head>
 
-<body class="bg-dark p-2" style="overflow-x:hidden">
+<body class="bg-dark p-2" style="overflow-x: hidden">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6 text-center">
             <div class="card opacity-75">
@@ -28,28 +26,36 @@
                         Software Engineer Ümit KOÇ
                     </div>
                 </small>
-                <img src="{{url_for('static', filename='rabbit.jpg')}}"
-                    alt="image" class="thumbnail card-img-center w-50">
-
+                <img src="{{url_for('static',filename='rabbit.jpg')}}" alt="image" class="thumbnail card-img-center w-50" />
             </div>
         </div>
     </div>
 
     <div class="row d-flex justify-content-center my-2">
         <div class="col-md-6 text-center">
-            <div class="card " style="height: 100wh;">
-                <div class="card-body">
-                    <span id="body" onclick="myfunc(event)"></span>
-                    <div class="spinner-grow text-success" role="status" id="loading"></div>
-                </div>
+            <div class="card" style="height: 100wh">
+                <div class="card-body" id="body" onclick="myfunc(event)"></div>
                 <div class="card-footer">
                     <a href="#" onclick="randomText()" class="btn btn-info btn-lg">Random Paragraph</a>
                 </div>
-
             </div>
         </div>
     </div>
-    <script src="{{url_for('static', filename='main.js')}}"></script>
+
+    <div id="kt_docs_toast_stack_container" class="toast-container position-fixed top-0 end-0 ">
+        <div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-kt-docs-toast="stack">
+            <div class="toast-header d-flex justify-content-between">
+                <small>RABBIT WORD</small>
+                <span></span>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="lock">
+            </div>
+        </div>
+    </div>
+    <!--end::Toast-->
+
+    <script src="{{url_for('static',filename='main.js')}}"></script>
 </body>
 
 </html>
