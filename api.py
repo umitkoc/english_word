@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 #import translators as ts
 #from flask_cors import CORS, cross_origin
-from requests import get
-from bs4 import BeautifulSoup
+#from requests import get
+#from bs4 import BeautifulSoup
 app = Flask(__name__)
 #cors = CORS(app, resources={r"/foo": {"origins": "*"}})
 #app.config['CORS_HEADERS'] = 'Content-Type'
