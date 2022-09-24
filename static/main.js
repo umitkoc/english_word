@@ -2,7 +2,7 @@ async function randomText() {
     let body = document.getElementById("body");
     body.innerHTML = "";
     $.ajax({
-        url: `http://127.0.0.1:5000/randomtext`,
+        url: `https://english-word-rabbit.herokuapp.com/randomtext`,
         type: "GET",
         contentType: "application/json",
         success: function (data) {
@@ -23,7 +23,7 @@ async function myfunc(event) {
     const targetElement = document.getElementById('toast');
     const word = event.target.innerHTML.replace("&nbsp;&nbsp;", "")
     $.ajax({
-        url: `http://127.0.0.1:5000/${word}`,
+        url: `https://english-word-rabbit.herokuapp.com/${word}`,
         type: "POST",
         contentType: "application/json",
         success: function (data) {
