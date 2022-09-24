@@ -1,8 +1,8 @@
+from bs4 import BeautifulSoup
 from flask import Flask, render_template
-import translators as ts
 from flask_cors import CORS, cross_origin
 from requests import get
-from bs4 import BeautifulSoup
+from translators import google
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/foo": {"origins": "*"}})
@@ -12,7 +12,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/<text>', methods=["POST"])
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def index(text):
-    return ts.google(from_language="en", to_language="tr", query_text=text)
+    return google(from_language="en", to_language="tr", query_text=text)
    
 
 @app.route('/')
