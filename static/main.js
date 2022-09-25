@@ -30,7 +30,7 @@ async function Sentence() {
                 button.className = "btn btn-square-md btn-light p-0 opacity-50";
                 button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;");
                 button.innerHTML = i + "&nbsp;&nbsp;";
-                button.style.fontSize="20px";
+                button.style.fontSize = "20px";
                 body.appendChild(button);
             });
         }
@@ -49,7 +49,7 @@ async function Word() {
             button.className = "btn btn-square-md btn-light p-0 opacity-50";
             button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;");
             button.innerHTML = data;
-            button.style.fontSize="25px";
+            button.style.fontSize = "25px";
             body.appendChild(button);
         }
     });
@@ -79,9 +79,7 @@ async function myfunc(event) {
 
 
 }
-
-
-
+    
 
 
 
