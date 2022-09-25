@@ -1,8 +1,8 @@
-async function randomText() {
+async function Paragraph() {
     let body = document.getElementById("body");
     body.innerHTML = "";
     $.ajax({
-        url: `https://english-word-rabbit.herokuapp.com/randomtext`,
+        url: `https://english-word-rabbit.herokuapp.com/paragraph`,
         type: "GET",
         contentType: "application/json",
         success: function (data) {
@@ -16,6 +16,47 @@ async function randomText() {
         }
     });
 }
+
+async function Sentence() {
+    let body = document.getElementById("body");
+    body.innerHTML = "";
+    $.ajax({
+        url: `https://english-word-rabbit.herokuapp.com/sentence`,
+        type: "GET",
+        contentType: "application/json",
+        success: function (data) {
+            data.split(" ").forEach(i => {
+                let button = document.createElement("button");
+                button.className = "btn btn-square-md btn-light p-0 opacity-50";
+                button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;");
+                button.innerHTML = i + "&nbsp;&nbsp;";
+                button.style.fontSize="20px";
+                body.appendChild(button);
+            });
+        }
+    });
+}
+
+async function Word() {
+    let body = document.getElementById("body");
+    body.innerHTML = "";
+    $.ajax({
+        url: `https://english-word-rabbit.herokuapp.com/word`,
+        type: "GET",
+        contentType: "application/json",
+        success: function (data) {
+            let button = document.createElement("button");
+            button.className = "btn btn-square-md btn-light p-0 opacity-50";
+            button.setAttribute("style", "margin-right:0.03px; border-radius: 0 !important;");
+            button.innerHTML = data;
+            button.style.fontSize="25px";
+            body.appendChild(button);
+        }
+    });
+}
+
+
+
 
 async function myfunc(event) {
     event.preventDefault();
