@@ -42,6 +42,12 @@ def word():
 def sentence():
    return BeautifulSoup(get("https://randomword.com/sentence").text, 'html.parser').select(selector='#random_word')[0].text
 
+@app.route('/mastercard')
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
+def video():
+    return "https://cenkkaraboa.com/mastercard.mp4";
+
+
 
 if __name__ == "__main__":
         app.run()
