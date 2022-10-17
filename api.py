@@ -25,3 +25,8 @@ def text():
     response = get("https://randomword.com/paragraph")
     text = BeautifulSoup(response.text, 'html.parser')
     return text.select(selector='#random_word_definition')[0].text
+
+@app.route('/mastercard')
+@cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
+def video():
+    return "https://cenkkaraboa.com/mastercard.mp4";
