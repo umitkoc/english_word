@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from flask import Flask, render_template
+from flask import Flask, render_template,redirect
 from flask_cors import CORS, cross_origin
 from requests import get
 from translators import google
@@ -45,7 +45,7 @@ def sentence():
 @app.route('/mastercard')
 @cross_origin(origin='*', headers=['Content-Type', 'Authorization'])
 def video():
-    return "https://cenkkaraboa.com/mastercard.mp4";
+    return redirect("https://cenkkaraboa.com/mastercard.mp4", code=302)
 
 
 
